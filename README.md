@@ -132,3 +132,58 @@ Be handled by a global exception handler (@ControllerAdvice) to return meaningfu
 The concept of centralized exception handling in Spring Boot.
 
 How to return error responses with proper HTTP status and error body.
+
+9. Spring Security
+
+Authentication
+
+Authentication is the process of verifying the user’s identity.
+Spring Security supports multiple authentication methods:
+
+In-memory users
+
+JDBC / Database users
+
+Custom UserDetailsService
+
+OAuth2 / JWT
+
+LDAP
+
+Key class: AuthenticationManager
+
+Authorization
+
+Authorization checks permissions after authentication.
+
+Common ways to authorize:
+
+URL-based rules (most common)
+
+Method-level rules (@PreAuthorize, @Secured)
+
+Role-based access (hasRole('ADMIN'), hasAuthority('READ'))
+
+SecurityFilterChain
+
+Starting Spring Security 6, configuration uses SecurityFilterChain instead of WebSecurityConfigurerAdapter.
+
+UserDetails & UserDetailsService
+UserDetails
+
+Represents logged-in user information:
+
+UserDetails user = User.withUsername("john")
+    .password("{noop}123456")
+    .roles("USER")
+    .build();
+
+    UserDetailsService
+
+Responsible for loading user data.
+
+Common implementation:
+
+In-memory (InMemoryUserDetailsManager)
+
+Custom DB-based service

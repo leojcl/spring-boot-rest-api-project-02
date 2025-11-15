@@ -1,7 +1,5 @@
 package com.leojcl.employees.controller;
 
-import com.leojcl.employees.dao.EmployeeDAO;
-import com.leojcl.employees.dao.EmployeeDAOJpaImpl;
 import com.leojcl.employees.entity.Employee;
 import com.leojcl.employees.request.EmployeeRequest;
 import com.leojcl.employees.service.EmployeeService;
@@ -10,7 +8,6 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Min;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
